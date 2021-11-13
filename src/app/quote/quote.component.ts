@@ -19,6 +19,9 @@ export class QuoteComponent implements OnInit {
 
   vote(isLiked: any, index: number){
     if (isLiked){
+      for (){
+        
+      }
       var likes= +1;
       console.log(`This quote has ${likes} votes`)
     }
