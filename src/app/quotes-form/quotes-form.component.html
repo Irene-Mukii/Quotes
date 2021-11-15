@@ -1,1 +1,42 @@
-<p>quotes-form works!</p>
+<div class='container-fluid'>
+    <h2 class='text-center'>Add your quote!</h2>
+    <form (ngSubmit)='submitQuote()' #quotesForm='ngForm'>
+        <div class='form-group'>
+            <label for="quote">Quote</label>
+            <input type="text" required class='form-control' id = 'quote' [(ngModel)]="newQuote.quote" name='quote' #quote='ngModel'>
+            <div [hidden]='quote.valid || quote.pristine' class='alert alert-danger'>
+                <p>This field is required</p>
+            </div>
+        Display {{newQuote.quote}}
+        </div>
+        <div class='form-group'>
+            <label for="elaboration">Elaboration</label>
+            <input type="text" required class='form-control' id = 'elaboration' [(ngModel)]="newQuote.elaboration" name='elaboration' #elaboration='ngModel'>
+            <div [hidden]='elaboration.valid || elaboration.pristine' class='alert alert-danger'>
+                <p>This field is required</p>
+            </div>
+        </div>
+        <div class='form-group'>
+            <label for="author">Author</label>
+            <input type="text" required class='form-control' id = 'author' [(ngModel)]="newQuote.author" name='author' #author='ngModel'>
+            <div [hidden]='author.valid || author.pristine' class='alert alert-danger'>
+                <p>This field is required</p>
+            </div>
+        </div>
+        <div class='form-group'>
+            <label for="contributor">Contributed by: </label>
+            <input type="text" required class='form-control' id = 'contributor' [(ngModel)]="newQuote.contributor" name='contributor' #contributor='ngModel'>
+            <div [hidden]='contributor.valid || contributor.pristine' class='alert alert-danger'>
+                <p>This field is required</p>
+            </div>
+        </div>
+        <div class='form-group'>
+            <label for="date">Date: </label>
+            <input type="date" required class='form-control' id = 'date' [(ngModel)]="newQuote.date" name='date' #date='ngModel'>
+            <div [hidden]='date.valid || date.pristine' class='alert alert-danger'>
+                <p>This field is required</p>
+            </div>
+        </div>
+        <button type='submit' class='btn btn-success'> Submit Quote</button>
+    </form>
+</div>
